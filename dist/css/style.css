@@ -1,0 +1,468 @@
+/* ==================== reset ==================== */
+*, *:before, *:after{margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box;}
+
+body{font-family: timsans-regular, sans-serif; font-size: inherit;}
+
+input, select, iframe, button{border: none; font-family: 'Open Sans', sans-serif}
+
+h1, h2, h3{margin: 0; padding: 0}
+
+ol,ul{list-style: none;}
+
+a{text-decoration: none; color: inherit;}
+
+a:hover{color: #f9014d}
+
+img{max-width: 100%; border: none;}
+
+/* ==================== fonts ==================== */
+@font-face{
+	font-family: timsans-medium;
+	src: url('../fonts/timsans-medium.ttf');
+}
+
+@font-face{
+	font-family: timsans-regular;
+	src: url('../fonts/timsans-regular.ttf');
+}
+
+.font-timmedium{
+	font-family: timsans-medium;
+	font-style: normal;
+}
+
+.font-timregular{
+	font-family: timsans-regular;
+	font-style: normal;
+}
+
+.whatsapp-fixo {
+	position: fixed;
+	bottom:50%;
+	right: 10px;
+	z-index: 999;
+}
+
+/* ==================== gerais ==================== */
+.section{
+	float: left;
+	width: 100%
+}
+.section:not(:first-of-type){
+	margin-top: 60px;
+}
+
+.section-header{
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.section-header h1{
+	font-size: 38px;
+	font-weight: normal;
+	font-family: timsans-regular;
+}
+
+.content{
+	max-width: 960px;
+	width: 90%;
+	margin: 0 auto;
+}
+.row{
+	float: left;
+	width: 100%;
+}
+.btn{
+	background: none;
+	border: 1px solid #800000;
+	padding: 5px 10px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 6px;
+	color: #800000;
+	font-family: timsans-regular;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.btn:hover{
+	background: #800000;
+	border: 1px solid #800000;
+	color: #fff;
+}
+.color-bordo{
+	color: #800000;
+}
+
+/* ==================== box ==================== */
+.box{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.box-name{
+	position: absolute;
+	z-index: 2;
+	left: 10px;
+	top: 10px;
+	font-size: 14px;
+	color: #fff;
+	background: #f9014d;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+.box-cover{
+	font-size: 0;
+	line-height: 1em;
+}
+.box-cover img{
+	width: 100%;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-webkit-transition: all .300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+.box:hover .box-cover img{
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+}
+.box:hover .box-detalhes:before, 
+.box:hover .box-detalhes-info{
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+.box-detalhes{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	padding: 15px;
+	font-size: 15px;
+	color: #fff;
+}
+.box-detalhes:before{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -20px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: .8;
+	visibility: hidden;
+	background: linear-gradient(to bottom, transparent, #000);
+
+	-webkit-transition: all .250ms ease-in-out;
+	transition: all 250ms ease-in-out;
+	-webkit-transform: translate(0, 50%);
+	transform: translate(0, 50%);
+}
+.box-detalhes-info{
+	position: relative;
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all .250ms ease-in-out;
+	transition: all 250ms ease-in-out;
+	-webkit-transform: translate(0, 50%);
+	transform: translate(0, 50%);
+}
+.box-detalhes-info h1{
+	font-size: 20px;
+}
+
+/* ==================== header ==================== */
+.header{
+	position: fixed;
+	width: 100%;
+	padding-top: 30px;
+	z-index: 6; 
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.header .logo img{
+	max-width: 150px;
+}
+
+.header.fixed{
+	background: #2c3e50;
+	opacity: 0.9;
+	padding: 10px 0 5px 0;
+}
+
+/* ==================== search / estatistica ==================== */
+.search-box{
+	text-align: center;
+	color: #fff;
+	padding: 100px 0;
+	background-image: url(../images/impressora4.png);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.search-box h1{
+	text-transform: uppercase;
+	font-size: 37px;
+	font-weight: bold;
+}
+
+.search-box .tagline{
+	text-transform: uppercase;
+	font-size: 26px;
+}
+
+/* ==================== estatistica ==================== */
+.estatistica{
+	background: rgb(203,234,237);
+	max-width: 960px;
+	width: 90%;
+	padding: 30px 0;
+	margin: -40px auto 0 auto;
+	text-align: center;
+
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,.3);
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,.3);
+}
+
+.estatistica-item span{
+	font-size: 33px;
+	font-family: timsans-regular;
+	font-weight: bold;
+	color: rgb(52,73,94);
+}
+
+.estatistica-item p{
+	font-size: 20px;
+}
+
+/* ==================== column ==================== */
+.col{
+	margin-bottom: 20px;
+}
+
+/* ==================== footer ==================== */
+.footer{
+	background: #f4f4f4;
+	float: left;
+	width: 100%;
+	color: rgb(52,73,94);
+	padding: 30px 20px;
+}
+.footer-col{
+	width: 100%;
+	float: left;
+	margin-bottom: 30px;
+}
+.footer-col h1{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.footer-col-links li{
+	padding: 10px 0;
+}
+
+.footer-col-social li{
+	padding: 10px 0;
+}
+.footer-col-social li i{
+	font-size: 25px;
+	margin-right: 2%;
+}
+.footer-autorais{
+	border-top: 1px solid rgb(52,73,94);
+	padding-top: 15px;
+}
+
+/* ==================== parallax ==================== */
+.parallax{
+	float: left;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	padding: 160px 0;
+	margin-top: 60px;
+	font-size: 23px;
+	background-image: url(../images/quebrou.png);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.parallax h1{
+	font-size: 38px;
+	margin-bottom: 10px;
+	font-family: timsans-regular;
+	font-weight: bold;
+}
+
+.parallax p{
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.parallax a{
+	background: #4bc160;
+	border: 1px solid #4bc160;
+	padding: 5px 10px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 6px;
+	color: #fff;
+	font-family: timsans-regular;
+	font-weight: bold;	
+}
+
+/* ==================== breackpoints max ==================== */
+@media(max-width: 767.9px){
+	.nav-open{
+		color: #fff;
+		font-size: 22px;
+	}
+	.nav-close{
+		font-size: 22px;
+	}
+	.header .nav.active{
+		right: 0;
+	}
+	.header .nav{
+		background: #fff;
+		width: 250px;
+		height: 100%;
+		position: fixed;
+		padding: 15px;
+		right: -100%;
+		top: 0;
+		z-index: 10;
+		transition: right .7s ease-in-out;
+	}
+	.header .nav ul li{
+		padding: 15px 5px;
+		font-size: 20px;
+		border-bottom: 1px solid #d4d4d4;
+	}
+	.estatistica{
+		flex-direction: column;
+	}
+	.estatistica-item{
+		min-width: 90%;
+	}
+	.estatistica-item:not(:last-of-type){		
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ccc;
+	}
+	.footer-col{
+		text-align: center;
+	}
+}
+
+/* ==================== breackpoints min ==================== */
+@media(min-width: 768px){
+	.nav-open, .nav-close{
+		display: none;
+	}
+	.header .nav{
+		float: right;
+		margin-top: 25px;
+		font-size: 20px;
+	}
+	.header .nav ul li{
+		display: inline-block;
+		margin-left: 20px;
+	}
+	.header .nav ul li a{
+		color: #FFF;
+	}
+	.header .nav ul li a:hover{
+		color: #f9014d;
+	}
+	.search-box{
+		padding: 200px 0;
+	}
+	.estatistica{
+		margin-top: -65px;
+	}
+	.estatistica-item{
+		text-align: center;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+	.estatistica-item:not(:last-of-type){
+		border-right: 1px solid #d4d4d4;
+	}
+	.col{
+		width: 49%;
+		margin-right: 2%;
+		margin-bottom: 2%;
+		float: left;
+	}
+	.col:first-child{
+		width: 100%;
+	}
+	.col:nth-child(odd){
+		margin-right: 0;
+	}
+	.footer-col{
+		width: 30%;
+	}
+	.footer-col:nth-child(2){
+		width: 30%;
+		margin-left: 5%;
+	}
+	.footer-col:nth-child(3){
+		width: 30%;
+		float: right;
+	}	
+}
+
+@media(min-width: 900px){
+	.col:nth-child(odd),
+	.col{
+		width: 32%;
+		margin-right: 2%;
+	}
+	.col:nth-of-type(3n+0){
+		margin-right: 0;
+	}
+	.footer-col{
+		width: 40%;
+	}
+	.footer-col:nth-child(2){
+		width: 30%;
+		margin-left: 5%;
+	}
+	.footer-col:nth-child(3){
+		width: 20%;
+		float: right;
+	}
+}
+
+/* ==================== classes auxiliares ==================== */
+.text-center{text-align: center}
+.text-left{text-align: left}
+.text-right{text-align: right}
+
+.fl-left{float: left}
+.fl-right{float: right}
+
+.mr-1{margin-right: 1%;}
+.mr-2{margin-right: 2%;}
+
+.color-green{color: #1abc9c;}
+.color-yellow{color: rgb(195,173,108);}
+.color-blue{color:rgb(52,73,94);}
